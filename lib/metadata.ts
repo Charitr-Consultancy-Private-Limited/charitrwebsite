@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 
-export const siteUrl = "https://charitr.in";
+export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://charitr.in";
 export const siteName = "Charitr Consultancy Private Limited";
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
+export function assetPath(path: `/${string}`): string {
+  return `${basePath}${path}`;
+}
 
 export function createMetadata(
   title: string,

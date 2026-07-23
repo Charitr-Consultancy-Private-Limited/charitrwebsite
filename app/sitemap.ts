@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { capabilities, caseStudies } from "@/data/site";
 import { siteUrl } from "@/lib/metadata";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = ["", "/about", "/capabilities", "/solutions", "/work", "/careers", "/contact", "/privacy-policy", "/cookie-policy", "/terms-of-use"];
   const routes = [
@@ -16,4 +18,3 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === "" ? 1 : route.includes("privacy") || route.includes("cookie") || route.includes("terms") ? 0.3 : 0.7,
   }));
 }
-

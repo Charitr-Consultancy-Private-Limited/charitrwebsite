@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
 import { SiteShell } from "@/components/layout/SiteShell";
-import { siteName, siteUrl } from "@/lib/metadata";
+import { assetPath, siteName, siteUrl } from "@/lib/metadata";
 import "./globals.css";
 
 const manrope = Manrope({ variable: "--font-heading", subsets: ["latin"], display: "swap" });
@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   title: { default: siteName, template: "%s | Charitr" },
   description: "Charitr designs, builds and transforms reliable digital products and technology-enabled operations.",
   applicationName: "Charitr",
-  icons: { icon: "/favicon.ico", shortcut: "/favicon.ico", apple: "/charitr-mark.png" },
+  icons: {
+    icon: assetPath("/favicon.ico"),
+    shortcut: assetPath("/favicon.ico"),
+    apple: assetPath("/charitr-mark.png"),
+  },
 };
 
 export const viewport: Viewport = {

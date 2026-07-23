@@ -13,7 +13,7 @@ export const metadata = createMetadata(
 export default function ContactPage() {
   return (
     <>
-      <PageHero eyebrow="Contact" title="Start with the challenge you are trying to solve." description="Share a brief outline of the product, process or technology decision in front of you. We will respond with a practical next step." crumbs={[{ label: "Contact" }]} />
+      <PageHero eyebrow="Contact" title="Start with the challenge you are trying to solve." description="Email or call us with a brief outline of the product, process or technology decision in front of you. We will respond with a practical next step." crumbs={[{ label: "Contact" }]} />
       <section className="section section--white">
         <div className="container contact-layout">
           <aside>
@@ -25,7 +25,7 @@ export default function ContactPage() {
               <a href={contact.emailHref}><Mail /><span><small>Email</small>{contact.email}</span></a>
               <span><MapPin /><span><small>Presence</small>Delhi · Chennai · Kochi</span></span>
             </div>
-            <div className="response-note"><strong>What happens next?</strong><p>We review the requirement, identify any essential questions and arrange a focused conversation with the right person.</p></div>
+            <div className="response-note"><strong>What happens next?</strong><p>After you contact us directly, we review the requirement, identify any essential questions and arrange a focused conversation with the right person.</p></div>
           </aside>
           <ContactForm />
         </div>
@@ -33,4 +33,3 @@ export default function ContactPage() {
     </>
   );
 }
-
