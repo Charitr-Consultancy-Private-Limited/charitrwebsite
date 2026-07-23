@@ -12,7 +12,7 @@ export function createMetadata(
   const fullTitle = title === siteName ? title : `${title} | Charitr`;
 
   return {
-    title: fullTitle,
+    title,
     description,
     alternates: { canonical },
     openGraph: {
@@ -31,4 +31,3 @@ export function createMetadata(
     },
   };
 }
-

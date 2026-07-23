@@ -22,13 +22,20 @@ export function Header() {
     return () => { document.body.style.overflow = ""; };
   }, [open]);
 
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
+
   return (
     <header className={`site-header${scrolled ? " site-header--scrolled" : ""}`}>
       <div className="container header-inner">
         <Link href="/" className="brand" aria-label="Charitr home" onClick={() => setOpen(false)}>
-          <BrandMark />
-          <span className="brand-word">charitr</span>
-          <span className="brand-descriptor">consultancy</span>
+          <BrandMark priority />
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
@@ -51,7 +58,7 @@ export function Header() {
         </button>
       </div>
 
-      <div id="mobile-navigation" className={`mobile-nav${open ? " mobile-nav--open" : ""}`}>
+      <div id="mobile-navigation" className={`mobile-nav${open ? " mobile-nav--open" : ""}`} aria-hidden={!open}>
         <nav aria-label="Mobile navigation">
           {navigation.map((item) => (
             <Link href={item.href} key={item.href} onClick={() => setOpen(false)}>{item.label}</Link>
@@ -62,4 +69,3 @@ export function Header() {
     </header>
   );
 }
-

@@ -2,22 +2,9 @@
 
 import { useState } from "react";
 import { AlertCircle, CheckCircle2, LoaderCircle } from "lucide-react";
+import { countryCallingCodes, interestOptions, organisationTypes, timeframeOptions } from "@/data/form-options";
 
 type FormStatus = "idle" | "sending" | "success" | "error";
-
-const interestOptions = [
-  "Engineering Excellence",
-  "UI/UX and Product Design",
-  "AI and Intelligent Automation",
-  "Technology Transformation",
-  "Digital Products and Platforms",
-  "Learning and Education Solutions",
-  "Workflow and Operational Automation",
-  "Data and Analytics",
-  "Partnership",
-  "Careers",
-  "Other",
-];
 
 export function ContactForm() {
   const [status, setStatus] = useState<FormStatus>("idle");
@@ -55,11 +42,30 @@ export function ContactForm() {
         <label>Name <input name="name" autoComplete="name" required minLength={2} /></label>
         <label>Organisation <input name="organisation" autoComplete="organization" required /></label>
         <label>Work email <input name="email" type="email" autoComplete="email" required /></label>
-        <label>Telephone <input name="telephone" type="tel" autoComplete="tel" required pattern="[+0-9 ()-]{7,20}" /></label>
+        <fieldset className="phone-field">
+          <legend>Telephone</legend>
+          <div className="phone-control">
+            <select name="telephoneCountryCode" defaultValue="+91" required aria-label="Telephone country code">
+              {countryCallingCodes.map(({ country, code }) => <option key={`${country}-${code}`} value={code}>{country} ({code})</option>)}
+            </select>
+            <input
+              name="telephone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel-national"
+              required
+              minLength={7}
+              maxLength={18}
+              aria-label="Telephone number"
+              placeholder="98765 43210"
+              onInput={(event) => { event.currentTarget.value = event.currentTarget.value.replace(/[^0-9 ()-]/g, ""); }}
+            />
+          </div>
+        </fieldset>
         <label>Organisation type
           <select name="organisationType" required defaultValue="">
             <option value="" disabled>Select one</option>
-            <option>SME</option><option>Social enterprise</option><option>NGO</option><option>Education / learning organisation</option><option>Start-up</option><option>Other</option>
+            {organisationTypes.map((option) => <option key={option}>{option}</option>)}
           </select>
         </label>
         <label>Location <input name="location" autoComplete="address-level2" required /></label>
@@ -72,7 +78,7 @@ export function ContactForm() {
         <label>Expected timeframe
           <select name="timeframe" required defaultValue="">
             <option value="" disabled>Select one</option>
-            <option>Immediately</option><option>Within 1–3 months</option><option>Within 3–6 months</option><option>Exploring options</option>
+            {timeframeOptions.map((option) => <option key={option}>{option}</option>)}
           </select>
         </label>
       </div>
@@ -87,8 +93,7 @@ export function ContactForm() {
           {status === "success" ? <CheckCircle2 size={19} /> : <AlertCircle size={19} />}{message}
         </p>
       )}
-      <p className="form-note">Protected by a hidden spam-prevention field. Delivery endpoint configuration is noted in the project README.</p>
+      <p className="form-note">When server-side email delivery is configured, this information is sent to Charitr as a structured plain-text email. It is not written to a website database.</p>
     </form>
   );
 }
-

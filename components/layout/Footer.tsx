@@ -11,7 +11,6 @@ export function Footer() {
         <div className="footer-intro">
           <Link href="/" className="brand brand--inverse" aria-label="Charitr home">
             <BrandMark inverse />
-            <span className="brand-word">charitr</span>
           </Link>
           <p>Technology consulting and digital product delivery for organisations creating business and social value.</p>
           <div className="footer-contact">
@@ -45,4 +44,3 @@ export function Footer() {
     </footer>
   );
 }
-

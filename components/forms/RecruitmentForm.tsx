@@ -2,8 +2,13 @@
 
 import { useState } from "react";
 import { AlertCircle, CheckCircle2, LoaderCircle } from "lucide-react";
+import { countryCallingCodes } from "@/data/form-options";
 
-export function RecruitmentForm() {
+type RecruitmentFormProps = {
+  roleTitle: string;
+};
+
+export function RecruitmentForm({ roleTitle }: RecruitmentFormProps) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -44,14 +49,33 @@ export function RecruitmentForm() {
       <div className="form-grid">
         <label>Name <input name="name" autoComplete="name" required minLength={2} /></label>
         <label>Email <input name="email" type="email" autoComplete="email" required /></label>
-        <label>Phone <input name="phone" type="tel" autoComplete="tel" required pattern="[+0-9 ()-]{7,20}" /></label>
+        <fieldset className="phone-field">
+          <legend>Phone</legend>
+          <div className="phone-control">
+            <select name="phoneCountryCode" defaultValue="+91" required aria-label="Phone country code">
+              {countryCallingCodes.map(({ country, code }) => <option key={`${country}-${code}`} value={code}>{country} ({code})</option>)}
+            </select>
+            <input
+              name="phone"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel-national"
+              required
+              minLength={7}
+              maxLength={18}
+              aria-label="Phone number"
+              placeholder="98765 43210"
+              onInput={(event) => { event.currentTarget.value = event.currentTarget.value.replace(/[^0-9 ()-]/g, ""); }}
+            />
+          </div>
+        </fieldset>
         <label>Current location <input name="location" autoComplete="address-level2" required /></label>
-        <label>Role applied for <input name="role" value="Full-time role — title to be confirmed" readOnly /></label>
+        <label>Role applied for <input name="role" value={roleTitle} readOnly /></label>
         <label>Years of experience <input name="experience" type="number" min="0" max="50" required /></label>
         <label>Notice period <input name="noticePeriod" required placeholder="For example: 30 days" /></label>
         <label>Résumé <input name="resume" type="file" accept=".pdf,.doc,.docx" aria-describedby="resume-note" /></label>
       </div>
-      <p id="resume-note" className="form-note">Upload interface placeholder: the file name is recorded, but secure résumé storage must be configured before launch.</p>
+      <p id="resume-note" className="form-note">Local preview only: the résumé file is not uploaded or stored. Secure application delivery must be configured before launch.</p>
       <label>Message <textarea name="message" rows={6} required minLength={20} placeholder="Share your relevant experience, current and expected compensation, and why you are interested." /></label>
       <label className="honeypot" aria-hidden="true">Website <input name="website" tabIndex={-1} autoComplete="off" /></label>
       <label className="consent-field"><input name="privacyConsent" type="checkbox" value="accepted" required /> <span>I consent to Charitr processing my details for recruitment. See the <a href="/privacy-policy">Privacy Policy</a>.</span></label>
@@ -66,4 +90,3 @@ export function RecruitmentForm() {
     </form>
   );
 }
-

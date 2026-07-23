@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: { default: siteName, template: "%s | Charitr" },
   description: "Charitr designs, builds and transforms reliable digital products and technology-enabled operations.",
   applicationName: "Charitr",
-  icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+  icons: { icon: "/favicon.ico", shortcut: "/favicon.ico", apple: "/charitr-mark.png" },
 };
 
 export const viewport: Viewport = {
@@ -54,4 +54,3 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     </html>
   );
 }
-

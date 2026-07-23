@@ -315,4 +315,3 @@ export const whyCharitr = [
   "Flexible engagement models",
   "Long-term product thinking",
 ] as const;
-
