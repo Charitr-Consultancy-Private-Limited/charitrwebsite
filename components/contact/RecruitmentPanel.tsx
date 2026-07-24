@@ -1,11 +1,11 @@
 import { Mail } from "lucide-react";
 import { contact } from "@/data/site";
 
-type RecruitmentFormProps = {
+type RecruitmentPanelProps = {
   roleTitle: string;
 };
 
-export function RecruitmentForm({ roleTitle }: RecruitmentFormProps) {
+export function RecruitmentPanel({ roleTitle }: RecruitmentPanelProps) {
   const applicationHref = `${contact.emailHref}?subject=${encodeURIComponent(`Application – ${roleTitle}`)}`;
 
   return (

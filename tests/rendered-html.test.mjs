@@ -12,6 +12,9 @@ test("static export contains the finished Charitr homepage", async () => {
   assert.match(html, /We design, build and transform/);
   assert.match(html, /Charitr Consultancy Private Limited/);
   assert.match(html, /Discuss Your Requirement/);
+  assert.match(html, /charitr-logo\.webp/);
+  assert.match(html, /favicon\.png/);
+  assert.doesNotMatch(html, /charitr-logo\.png|favicon\.ico/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
 

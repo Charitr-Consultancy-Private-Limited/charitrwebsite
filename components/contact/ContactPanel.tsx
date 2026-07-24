@@ -1,7 +1,7 @@
 import { Mail, Phone } from "lucide-react";
 import { contact } from "@/data/site";
 
-export function ContactForm() {
+export function ContactPanel() {
   return (
     <aside className="direct-contact-panel" aria-labelledby="direct-contact-title">
       <p className="eyebrow">Direct contact</p>

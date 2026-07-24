@@ -13,8 +13,8 @@ export const metadata: Metadata = {
   description: "Charitr designs, builds and transforms reliable digital products and technology-enabled operations.",
   applicationName: "Charitr",
   icons: {
-    icon: assetPath("/favicon.ico"),
-    shortcut: assetPath("/favicon.ico"),
+    icon: assetPath("/favicon.png"),
+    shortcut: assetPath("/favicon.png"),
     apple: assetPath("/charitr-mark.png"),
   },
 };

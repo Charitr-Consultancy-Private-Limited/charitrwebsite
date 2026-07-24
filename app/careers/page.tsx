@@ -1,5 +1,5 @@
 import { Check, Mail, MapPin, Phone } from "lucide-react";
-import { RecruitmentForm } from "@/components/forms/RecruitmentForm";
+import { RecruitmentPanel } from "@/components/contact/RecruitmentPanel";
 import { PageHero } from "@/components/sections/PageHero";
 import { careerOpening } from "@/data/careers";
 import { contact } from "@/data/site";
@@ -111,7 +111,7 @@ export default function CareersPage() {
             </div>
             <div className="equal-opportunity"><strong>Equal opportunity</strong><p>Charitr is committed to a respectful, inclusive hiring process. Employment decisions are based on role requirements, capability and potential without discrimination prohibited by applicable law.</p></div>
           </div>
-          <RecruitmentForm roleTitle={careerOpening.title} />
+          <RecruitmentPanel roleTitle={careerOpening.title} />
         </div>
       </section>
     </>

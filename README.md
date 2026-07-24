@@ -1,6 +1,6 @@
 # Charitr Consultancy corporate website
 
-Production-oriented static corporate website for Charitr Consultancy Private Limited, built with Next.js App Router, TypeScript, React, Tailwind CSS and Lucide icons.
+Production-oriented static corporate website for Charitr Consultancy Private Limited, built with Next.js App Router, TypeScript, React, custom CSS and Lucide icons.
 
 ## Website architecture
 
@@ -16,7 +16,7 @@ Production-oriented static corporate website for Charitr Consultancy Private Lim
 
 ## Content and component model
 
-Editable company, capability, solution and case-study content lives in `data/site.ts` and is strongly typed from `types/site.ts`. Components are grouped by layout, sections, contact panels, privacy and UI.
+Editable company, capability, solution and case-study content lives in `data/site.ts` and is strongly typed from `types/site.ts`. Components are grouped by layout, sections, contact panels, privacy and UI. The site has no server runtime or database.
 
 ## Local development
 

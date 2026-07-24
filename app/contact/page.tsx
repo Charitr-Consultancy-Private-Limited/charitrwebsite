@@ -1,5 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
-import { ContactForm } from "@/components/forms/ContactForm";
+import { ContactPanel } from "@/components/contact/ContactPanel";
 import { PageHero } from "@/components/sections/PageHero";
 import { contact } from "@/data/site";
 import { createMetadata } from "@/lib/metadata";
@@ -27,7 +27,7 @@ export default function ContactPage() {
             </div>
             <div className="response-note"><strong>What happens next?</strong><p>After you contact us directly, we review the requirement, identify any essential questions and arrange a focused conversation with the right person.</p></div>
           </aside>
-          <ContactForm />
+          <ContactPanel />
         </div>
       </section>
     </>
