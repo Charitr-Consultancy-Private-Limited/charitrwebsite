@@ -1,4 +1,4 @@
-import type { Capability, CaseStudy, Solution } from "@/types/site";
+import type { Capability, Solution, WorkItem } from "@/types/site";
 
 export const contact = {
   phone: "+91 99112 20198",
@@ -235,52 +235,78 @@ export const solutions: Solution[] = [
   },
 ];
 
-// CONTENT PLACEHOLDERS: Replace every case study below with verified client-approved material.
-export const caseStudies: CaseStudy[] = [
+export const workItems: WorkItem[] = [
   {
-    slug: "platform-modernisation-placeholder",
-    placeholder: true,
-    title: "Platform modernisation",
-    clientType: "Client type to be confirmed",
-    sector: "Sector to be confirmed",
-    challenge: "Verified challenge statement to be added after client approval.",
-    approach: "Verified delivery approach to be added.",
-    solution: "Verified solution description to be added.",
-    outcome: "No outcome claim published until verified.",
-    capabilities: ["Software Development", "UI/UX and Product Design"],
-    technologies: ["Technology stack to be confirmed"],
-    testimonial: "No testimonial supplied.",
+    slug: "mobile-learning-application",
+    title: "Mobile Learning Application",
+    subtitle: "Digital learning designed for mobile users",
+    description:
+      "Charitr designed and developed a mobile application to support digital learning and make educational content easier to access and use. The solution was designed around a simple learner experience, allowing users to interact with learning content through a mobile-first interface.",
+    homeDescription:
+      "A mobile-first learning experience designed to make educational content easier to access and use.",
+    activityHeading: "What we worked on",
+    activities: [
+      "Mobile application development",
+      "Learning experience design",
+      "User interface design",
+      "User journeys and navigation",
+      "Digital learning content presentation",
+      "Application testing",
+      "Deployment support",
+    ],
+    objective:
+      "Create a simple and accessible digital learning experience that allows learners to engage with educational content through a mobile device.",
+    tags: ["Software Development", "UI/UX", "Learning Technology"],
+    relatedCapabilities: ["Software Development", "UI/UX and Product Design"],
+    relatedSolutions: ["Web Applications and Platforms", "Learning and Education Systems"],
+  },
+  {
+    slug: "website-design-development",
+    title: "Website Design and Development",
+    subtitle: "Websites designed around clear communication and usability",
+    description:
+      "Charitr has designed and developed websites for organisations looking to establish or improve their digital presence. Our approach combines clear information architecture, responsive design and straightforward user experiences.",
+    homeDescription:
+      "Responsive websites combining clear information architecture, UI/UX design and reliable web development.",
+    activityHeading: "What we worked on",
+    activities: [
+      "Website planning",
+      "Information architecture",
+      "UI/UX design",
+      "Responsive website development",
+      "Content structure",
+      "Mobile optimisation",
+      "Website testing",
+      "Deployment support",
+    ],
+    objective:
+      "Create professional websites that communicate the organisation's purpose clearly and work reliably across desktop, tablet and mobile devices.",
+    tags: ["Web Development", "UI/UX", "Digital Experience"],
+    relatedCapabilities: ["Software Development", "UI/UX and Product Design"],
     relatedSolutions: ["Web Applications and Platforms"],
   },
   {
-    slug: "learning-experience-placeholder",
-    placeholder: true,
-    title: "Learning experience redesign",
-    clientType: "Client type to be confirmed",
-    sector: "Education / learning — to be confirmed",
-    challenge: "Verified learner and administrator challenge to be added.",
-    approach: "Verified research and design approach to be added.",
-    solution: "Verified product solution to be added.",
-    outcome: "No adoption or learning claim published until verified.",
-    capabilities: ["UI/UX and Product Design", "Software Development"],
-    technologies: ["Technology stack to be confirmed"],
-    testimonial: "No testimonial supplied.",
-    relatedSolutions: ["Learning and Education Systems"],
-  },
-  {
-    slug: "automation-placeholder",
-    placeholder: true,
-    title: "Operational workflow automation",
-    clientType: "Client type to be confirmed",
-    sector: "Sector to be confirmed",
-    challenge: "Verified operational challenge to be added.",
-    approach: "Verified process and implementation approach to be added.",
-    solution: "Verified workflow solution to be added.",
-    outcome: "No efficiency claim published until verified.",
-    capabilities: ["AI and Automation", "Technology Consulting"],
-    technologies: ["Technology stack to be confirmed"],
-    testimonial: "No testimonial supplied.",
-    relatedSolutions: ["Workflow Automation"],
+    slug: "digital-presence-website-improvement",
+    title: "Digital Presence and Website Improvement",
+    subtitle: "Improving existing digital experiences",
+    description:
+      "In addition to building new websites, Charitr supports organisations that need to improve existing websites and digital experiences. This can include reviewing content structure, simplifying navigation, improving responsive behaviour and modernising the overall visual experience.",
+    homeDescription:
+      "Improvements to content structure, navigation, responsive behaviour and the overall website experience.",
+    activityHeading: "Typical areas of work",
+    activities: [
+      "Website experience reviews",
+      "Navigation improvements",
+      "Page restructuring",
+      "User-interface improvements",
+      "Responsive design",
+      "Performance improvements",
+      "Content presentation",
+      "Ongoing website enhancements",
+    ],
+    tags: ["UI/UX", "Web Engineering", "Technology Consulting"],
+    relatedCapabilities: ["Software Development", "UI/UX and Product Design", "Technology Consulting"],
+    relatedSolutions: ["Web Applications and Platforms"],
   },
 ];
 

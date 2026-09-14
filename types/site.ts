@@ -24,19 +24,16 @@ export type Solution = {
   approach: string[];
 };
 
-export type CaseStudy = {
+export type WorkItem = {
   slug: string;
-  placeholder: true;
   title: string;
-  clientType: string;
-  sector: string;
-  challenge: string;
-  approach: string;
-  solution: string;
-  outcome: string;
-  capabilities: string[];
-  technologies: string[];
-  testimonial: string;
+  subtitle: string;
+  description: string;
+  homeDescription: string;
+  activityHeading: "What we worked on" | "Typical areas of work";
+  activities: string[];
+  objective?: string;
+  tags: string[];
+  relatedCapabilities: string[];
   relatedSolutions: string[];
 };
-

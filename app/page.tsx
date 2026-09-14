@@ -11,12 +11,12 @@ import {
   Store,
 } from "lucide-react";
 import { CapabilityCard } from "@/components/sections/CapabilityCard";
-import { CaseStudyCard } from "@/components/sections/CaseStudyCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { LocationBlock } from "@/components/sections/LocationBlock";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { WorkItemCard } from "@/components/sections/WorkItemCard";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { capabilities, caseStudies, outcomes, solutions, whyCharitr } from "@/data/site";
+import { capabilities, outcomes, solutions, whyCharitr, workItems } from "@/data/site";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata(
@@ -39,7 +39,7 @@ export default function Home() {
         <div className="container hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Software · Design · AI · Consulting</p>
-            <h1>We build software and <span>digital solutions.</span></h1>
+            <h1>We design and build digital solutions <span>that work.</span></h1>
             <p className="hero-lede">Charitr helps organisations build websites, applications and digital systems. We also provide UI/UX design, AI automation and practical technology advice.</p>
             <div className="hero-actions">
               <Link className="button" href="/contact">Contact Us <ArrowRight size={18} /></Link>
@@ -128,11 +128,11 @@ export default function Home() {
 
       <section className="section work-section">
         <div className="container section-heading-row">
-          <SectionHeader eyebrow="Example work" title="Project examples will be added here" description="These cards are placeholders for approved case studies." />
-          <Link className="text-link" href="/work">View work section <ArrowRight size={17} /></Link>
+          <SectionHeader eyebrow="Selected work" title="Digital solutions built around real user needs" description="Our work so far includes mobile learning applications and websites designed to make information, services and learning easier to access." />
+          <Link className="text-link" href="/work">View Our Work <ArrowRight size={17} /></Link>
         </div>
-        <div className="container case-grid">
-          {caseStudies.map((study, index) => <CaseStudyCard key={study.slug} study={study} index={index} />)}
+        <div className="container work-card-grid">
+          {workItems.slice(0, 2).map((item, index) => <WorkItemCard compact key={item.slug} item={item} index={index} />)}
         </div>
       </section>
 

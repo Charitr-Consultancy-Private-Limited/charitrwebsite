@@ -3,7 +3,7 @@ import { ArrowRight, Check, Users } from "lucide-react";
 import { notFound } from "next/navigation";
 import { CTASection } from "@/components/sections/CTASection";
 import { PageHero } from "@/components/sections/PageHero";
-import { capabilities, caseStudies, solutions } from "@/data/site";
+import { capabilities, solutions, workItems } from "@/data/site";
 import { createMetadata } from "@/lib/metadata";
 
 export function generateStaticParams() {
@@ -22,7 +22,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
   const capability = capabilities.find((item) => item.slug === slug);
   if (!capability) notFound();
   const relatedSolutions = solutions.filter((solution) => capability.relatedSolutions.includes(solution.title));
-  const relatedWork = caseStudies.filter((study) => study.capabilities.includes(capability.title));
+  const relatedWork = workItems.filter((item) => item.relatedCapabilities.includes(capability.title));
 
   return (
     <>
@@ -45,7 +45,7 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
       <section className="section section--white">
         <div className="container related-grid">
           <div><p className="eyebrow">Related solutions</p><h2>Where this service can be used</h2>{relatedSolutions.map((item) => <Link key={item.slug} href={`/solutions#${item.slug}`}>{item.title}<ArrowRight size={17} /></Link>)}</div>
-          <div><p className="eyebrow">Related work</p><h2>Project examples</h2>{relatedWork.length ? relatedWork.map((item) => <Link className="placeholder-link" key={item.slug} href={`/work/${item.slug}`}>{item.title}<span className="placeholder-badge">PLACEHOLDER</span></Link>) : <p className="placeholder-note"><strong>PLACEHOLDER</strong> · Approved project examples will be added here.</p>}</div>
+          <div><p className="eyebrow">Related work</p><h2>Project examples</h2>{relatedWork.length ? relatedWork.map((item) => <Link key={item.slug} href={`/work#${item.slug}`}>{item.title}<ArrowRight size={17} /></Link>) : <p>No related completed work is listed at this time.</p>}</div>
         </div>
       </section>
       <CTASection title={`Need help with ${capability.title.toLowerCase()}?`} />

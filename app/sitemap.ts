@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { capabilities, caseStudies } from "@/data/site";
+import { capabilities } from "@/data/site";
 import { siteUrl } from "@/lib/metadata";
 
 export const dynamic = "force-static";
@@ -9,7 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     ...staticRoutes,
     ...capabilities.map((item) => `/capabilities/${item.slug}`),
-    ...caseStudies.map((item) => `/work/${item.slug}`),
   ];
   return routes.map((route) => ({
     url: `${siteUrl}${route}`,

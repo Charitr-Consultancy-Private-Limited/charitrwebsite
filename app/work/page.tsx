@@ -1,26 +1,38 @@
-import { CaseStudyCard } from "@/components/sections/CaseStudyCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { PageHero } from "@/components/sections/PageHero";
-import { caseStudies } from "@/data/site";
+import { WorkItemCard } from "@/components/sections/WorkItemCard";
+import { workItems } from "@/data/site";
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata(
-  "Work and Case Studies",
-  "Project examples will be published here after the details are approved.",
+  "Selected Work",
+  "Mobile learning applications, websites and digital experience work designed and developed by Charitr.",
   "/work",
 );
 
 export default function WorkPage() {
   return (
     <>
-      <PageHero placeholder eyebrow="PLACEHOLDER · Work" title="Project examples will be added here." description="Client names, results, testimonials and statistics will only be published after they are checked and approved." crumbs={[{ label: "Work" }]} />
-      <section className="section">
-        <div className="container placeholder-callout"><strong>PLACEHOLDER</strong><p>The entries below are sample layouts. They must be replaced with approved project information and images.</p></div>
-        <div className="container case-grid case-grid--listing">
-          {caseStudies.map((study, index) => <CaseStudyCard key={study.slug} study={study} index={index} />)}
+      <PageHero
+        eyebrow="Work"
+        title="Selected Work"
+        description={[
+          "We are building Charitr around practical technology delivery — designing and developing digital solutions that are clear, useful and maintainable.",
+          "Our work so far includes digital learning applications and websites developed for organisations with specific communication, learning and user-experience needs.",
+          "As Charitr grows, this section will include more detailed project stories and outcomes.",
+        ]}
+        crumbs={[{ label: "Work" }]}
+      />
+      <section className="section section--white">
+        <div className="container work-list">
+          {workItems.map((item, index) => <WorkItemCard key={item.slug} item={item} index={index} />)}
         </div>
       </section>
-      <CTASection title="Would you like to discuss a project?" />
+      <CTASection
+        title="Our work is growing"
+        text="Charitr is an evolving technology company, and our portfolio will continue to grow across software engineering, experience design, artificial intelligence and digital transformation. We prefer to show real work rather than publish speculative case studies or unsupported results."
+        button="Discuss Your Requirement"
+      />
     </>
   );
 }

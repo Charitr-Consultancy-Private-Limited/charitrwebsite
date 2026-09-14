@@ -9,7 +9,7 @@ async function render(path = "/") {
 
 test("static export contains the finished Charitr homepage", async () => {
   const html = await render();
-  assert.match(html, /We build software and/);
+  assert.match(html, /We design and build digital solutions/);
   assert.match(html, /Charitr Consultancy Private Limited/);
   assert.match(html, /Contact Us/);
   assert.match(html, /charitr-logo\.webp/);
@@ -46,16 +46,31 @@ test("static export contains no website submission endpoint", async () => {
   assert.match(contactHtml, /does not collect or store enquiry details/);
 });
 
-test("placeholder content is explicit and styled in red", async () => {
+test("work pages contain factual entries and no project placeholders", async () => {
   const workHtml = await render("/work");
+  const homepage = await render();
+
+  assert.match(workHtml, /Selected Work/);
+  assert.match(workHtml, /Mobile Learning Application/);
+  assert.match(workHtml, /Website Design and Development/);
+  assert.match(workHtml, /Digital Presence and Website Improvement/);
+  assert.match(workHtml, /\+91 99112 20198/);
+  assert.match(workHtml, /info@charitr\.in/);
+  assert.doesNotMatch(workHtml, /placeholder|to be confirmed/i);
+  assert.match(homepage, /Digital solutions built around real user needs/);
+  assert.match(homepage, /Mobile Learning Application/);
+  assert.match(homepage, /Website Design and Development/);
+  assert.doesNotMatch(homepage, /Digital Presence and Website Improvement|placeholder/i);
+  await assert.rejects(() => render("/work/platform-modernisation-placeholder"), { code: "ENOENT" });
+});
+
+test("non-project placeholders remain explicit and styled in red", async () => {
   const legalHtml = await render("/privacy-policy");
   const styles = await readFile(
     new URL("../app/globals.css", import.meta.url),
     "utf8",
   );
 
-  assert.match(workHtml, /PLACEHOLDER · Work/);
-  assert.match(workHtml, /case-card--placeholder/);
   assert.match(legalHtml, /PLACEHOLDER · Legal/);
   assert.match(styles, /--placeholder-red: #b42318/);
 });

@@ -9,7 +9,7 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: string;
-  description: string;
+  description: string | readonly string[];
   crumbs: Crumb[];
   placeholder?: boolean;
 }) {
@@ -20,7 +20,11 @@ export function PageHero({
         <div className="page-hero__content">
           <p className={placeholder ? "placeholder-hero-label" : "eyebrow"}>{eyebrow}</p>
           <h1>{title}</h1>
-          <p>{description}</p>
+          <div className="page-hero__description">
+            {typeof description === "string"
+              ? <p>{description}</p>
+              : description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+          </div>
         </div>
       </div>
     </section>
