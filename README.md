@@ -59,7 +59,7 @@ pnpm build:pages
 ```
 
 Pushing to `main` triggers `.github/workflows/pages.yml`, which publishes the
-preview at `https://anupnathaniel.github.io/charitrwebsite/`.
+preview at `https://charitr-consultancy-private-limited.github.io/charitrwebsite/`.
 
 ## Launch checklist / TODO
 
