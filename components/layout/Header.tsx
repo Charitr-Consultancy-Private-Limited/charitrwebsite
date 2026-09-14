@@ -1,14 +1,30 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { navigation } from "@/data/site";
 import { BrandMark } from "@/components/ui/BrandMark";
 
 export function Header() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
+  const isActive = (href: string) => {
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    const currentPath = basePath && pathname.startsWith(basePath)
+      ? pathname.slice(basePath.length) || "/"
+      : pathname;
+    const normalizedPath = currentPath.length > 1
+      ? currentPath.replace(/\/+$/, "")
+      : currentPath;
+
+    return href === "/"
+      ? normalizedPath === "/"
+      : normalizedPath === href || normalizedPath.startsWith(`${href}/`);
+  };
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 16);
@@ -39,7 +55,15 @@ export function Header() {
         </Link>
 
         <nav className="desktop-nav" aria-label="Primary navigation">
-          {navigation.map((item) => <Link href={item.href} key={item.href}>{item.label}</Link>)}
+          {navigation.map((item) => (
+            <Link
+              href={item.href}
+              key={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+            >
+              {item.label}
+            </Link>
+          ))}
         </nav>
 
         <Link className="button button--small header-cta" href="/contact">
@@ -61,7 +85,14 @@ export function Header() {
       <div id="mobile-navigation" className={`mobile-nav${open ? " mobile-nav--open" : ""}`} aria-hidden={!open}>
         <nav aria-label="Mobile navigation">
           {navigation.map((item) => (
-            <Link href={item.href} key={item.href} onClick={() => setOpen(false)}>{item.label}</Link>
+            <Link
+              href={item.href}
+              key={item.href}
+              aria-current={isActive(item.href) ? "page" : undefined}
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </Link>
           ))}
           <Link className="button" href="/contact" onClick={() => setOpen(false)}>Discuss Your Requirement</Link>
         </nav>

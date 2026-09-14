@@ -25,6 +25,21 @@ test("static export contains an internal route with breadcrumbs", async () => {
   assert.match(html, /Problems addressed/);
 });
 
+test("navigation supports an accessible active-page state", async () => {
+  const headerSource = await readFile(
+    new URL("../components/layout/Header.tsx", import.meta.url),
+    "utf8",
+  );
+  const styles = await readFile(
+    new URL("../app/globals.css", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(headerSource, /usePathname/);
+  assert.match(headerSource, /aria-current=\{isActive\(item\.href\) \? "page"/);
+  assert.match(styles, /a\[aria-current="page"\]/);
+});
+
 test("static export contains no website submission endpoint", async () => {
   const contactHtml = await render("/contact");
   const careersHtml = await render("/careers");
