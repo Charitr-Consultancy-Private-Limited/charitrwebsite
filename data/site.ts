@@ -13,15 +13,17 @@ export const navigation = [
   { label: "Services", href: "/capabilities" },
   { label: "Solutions", href: "/solutions" },
   { label: "Work", href: "/work" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const capabilities: Capability[] = [
   {
     slug: "engineering-excellence",
-    title: "Software Development",
-    eyebrow: "Web and business software",
-    statement: "Build and improve software that supports your day-to-day work.",
+    title: "Engineering Excellence",
+    eyebrow: "Reliable software delivery",
+    statement: "Build reliable digital products that can scale.",
+    cardDescription: "Design, develop and improve applications, platforms and integrations with quality and maintainability in mind.",
     overview:
       "Charitr develops web applications, digital platforms and business systems. We can build a new product, improve an existing application or connect systems that currently work separately.",
     problems: [
@@ -56,14 +58,15 @@ export const capabilities: Capability[] = [
     example:
       "An organisation operates a critical application that has become slow, difficult to maintain and dependent on a small number of developers. Charitr reviews the architecture, restructures the application into maintainable components, improves performance, modernises the interface and establishes a more reliable development and deployment process.",
     approach: ["Review the current system", "Agree the scope", "Build in manageable stages", "Test and release", "Support and improve"],
-    relatedSolutions: ["Web Applications and Platforms", "Workflow Automation", "Dashboards and Reporting"],
+    relatedSolutions: ["Digital Products and Platforms", "Workflow and Operational Automation", "Data, Analytics and Decision Support"],
     accent: "navy",
   },
   {
     slug: "ui-ux-product-design",
     title: "UI/UX and Product Design",
-    eyebrow: "Simple, usable design",
-    statement: "Make websites and applications easier for people to use.",
+    eyebrow: "Clear digital experiences",
+    statement: "Create digital experiences people can understand and use.",
+    cardDescription: "Research user needs, simplify journeys and create accessible interfaces that support real tasks.",
     overview:
       "Charitr helps plan and design websites, applications and digital services. We study what users need, organise the content and workflows, and create clear designs for development.",
     problems: [
@@ -97,14 +100,15 @@ export const capabilities: Capability[] = [
     example:
       "An education platform contains valuable features, but learners and administrators struggle to find information, complete tasks and understand progress. Charitr studies the user journeys, simplifies the platform structure, redesigns key workflows and creates a consistent design system for future development.",
     approach: ["Understand the users", "Map the main tasks", "Create wireframes and designs", "Test the important flows", "Support development"],
-    relatedSolutions: ["Web Applications and Platforms", "Learning and Education Systems"],
+    relatedSolutions: ["Digital Products and Platforms", "Learning and Education Solutions"],
     accent: "amber",
   },
   {
     slug: "ai-intelligent-automation",
-    title: "AI and Automation",
-    eyebrow: "Useful automation",
-    statement: "Use AI and automation to reduce repetitive work.",
+    title: "AI and Intelligent Automation",
+    eyebrow: "Responsible applied AI",
+    statement: "Apply AI to practical product and operational challenges.",
+    cardDescription: "Assess useful opportunities and design AI-assisted tools with appropriate data, risk and human-review controls.",
     overview:
       "Charitr helps organisations find suitable uses for AI and automation. We can build tools for document processing, search, reporting and routine workflows, with human review where it is needed.",
     problems: [
@@ -141,14 +145,15 @@ export const capabilities: Capability[] = [
     example:
       "A programme-management team receives reports from multiple locations in different formats. Employees manually review the reports and prepare management summaries. Charitr develops an AI-assisted workflow that extracts key information, identifies missing details and prepares a consolidated draft report for human validation.",
     approach: ["Choose a useful task", "Review the data and risks", "Test a small version", "Add human checks", "Monitor and improve"],
-    relatedSolutions: ["Workflow Automation", "Learning and Education Systems", "Dashboards and Reporting"],
+    relatedSolutions: ["Workflow and Operational Automation", "Learning and Education Solutions", "Data, Analytics and Decision Support"],
     accent: "teal",
   },
   {
     slug: "technology-transformation-advisory",
-    title: "Technology Consulting",
-    eyebrow: "Clear technology advice",
-    statement: "Plan technology changes and choose suitable systems.",
+    title: "Technology Transformation and Advisory",
+    eyebrow: "Decisions through delivery",
+    statement: "Make better technology decisions and carry them through implementation.",
+    cardDescription: "Review systems and processes, set priorities, compare options and support implementation and adoption.",
     overview:
       "Charitr reviews existing systems and processes, helps set priorities, and supports software or vendor selection. We can also help manage implementation, testing and user adoption.",
     problems: [
@@ -187,7 +192,7 @@ export const capabilities: Capability[] = [
     example:
       "An organisation needs to replace multiple spreadsheets and informal approval processes with a central system. Charitr documents the requirements, evaluates suitable products, recommends the implementation approach and manages deployment, testing and adoption.",
     approach: ["Review the current setup", "Agree priorities", "Compare suitable options", "Support implementation", "Help teams adopt the change"],
-    relatedSolutions: ["Web Applications and Platforms", "Workflow Automation", "Dashboards and Reporting"],
+    relatedSolutions: ["Digital Products and Platforms", "Workflow and Operational Automation", "Data, Analytics and Decision Support"],
     accent: "blue",
   },
 ];
@@ -195,41 +200,41 @@ export const capabilities: Capability[] = [
 export const solutions: Solution[] = [
   {
     slug: "digital-products-platforms",
-    title: "Web Applications and Platforms",
+    title: "Digital Products and Platforms",
     summary: "Web and mobile-friendly systems for customers, partners and internal teams.",
     problem: "Important work is often spread across spreadsheets, email and separate applications, which makes it difficult to manage.",
     users: ["Customers", "Partners", "Programme teams", "Administrators", "Field teams"],
-    capabilities: ["Software Development", "UI/UX and Product Design", "Technology Consulting"],
+    capabilities: ["Engineering Excellence", "UI/UX and Product Design", "Technology Transformation and Advisory"],
     functionality: ["Customer and partner portals", "Internal business applications", "Programme-management platforms", "Procurement and approval systems", "Knowledge and data-collection portals", "Mobile-responsive applications"],
     approach: ["Understand the users and work", "Agree the first release", "Design the main workflows", "Build and test", "Launch and support"],
   },
   {
     slug: "learning-education",
-    title: "Learning and Education Systems",
+    title: "Learning and Education Solutions",
     summary: "Learning platforms and tools for learners, educators and administrators.",
     problem: "Learning experiences become fragmented when content, assessments, progress and administration sit across disconnected tools.",
     users: ["Learners", "Educators", "Training teams", "Administrators", "Programme leaders"],
-    capabilities: ["UI/UX and Product Design", "Software Development", "AI and Automation"],
+    capabilities: ["UI/UX and Product Design", "Engineering Excellence", "AI and Intelligent Automation"],
     functionality: ["Learning platforms", "Digital assessments", "Learner dashboards", "Training-management systems", "Interactive and AI-assisted learning", "Learning analytics", "Virtual learning environments"],
     approach: ["Understand the learning goals", "Map learner and administrator tasks", "Design the main screens", "Connect content and data", "Review use and improve"],
   },
   {
     slug: "workflow-automation",
-    title: "Workflow Automation",
+    title: "Workflow and Operational Automation",
     summary: "Digital workflows that reduce manual steps and make responsibilities clearer.",
     problem: "Approvals, tasks and reporting managed through email and spreadsheets create delays, duplication and limited accountability.",
     users: ["Operations teams", "Managers", "Procurement teams", "Programme teams", "Shared-service teams"],
-    capabilities: ["AI and Automation", "Software Development", "Technology Consulting"],
+    capabilities: ["AI and Intelligent Automation", "Engineering Excellence", "Technology Transformation and Advisory"],
     functionality: ["Approval workflows", "Task and responsibility tracking", "Project monitoring", "Procurement workflows", "Notifications and escalations", "Document processing", "Management reporting"],
     approach: ["Review the current process", "Remove unnecessary steps", "Define controls and exceptions", "Automate the repeatable work", "Track adoption and performance"],
   },
   {
     slug: "data-analytics",
-    title: "Dashboards and Reporting",
+    title: "Data, Analytics and Decision Support",
     summary: "Dashboards and reports that bring important information together.",
     problem: "Decision-makers often wait for manually consolidated reports and lack a consistent view of operational or programme performance.",
     users: ["Leadership teams", "Programme managers", "Operations teams", "Monitoring teams", "Analysts"],
-    capabilities: ["Software Development", "AI and Automation", "Technology Consulting"],
+    capabilities: ["Engineering Excellence", "AI and Intelligent Automation", "Technology Transformation and Advisory"],
     functionality: ["Management dashboards", "KPI and programme tracking", "Impact reporting", "Data consolidation", "Operational analytics", "Automated reporting", "Executive decision-support tools"],
     approach: ["Define the decisions to support", "Assess source data", "Establish trusted definitions", "Build clear views and workflows", "Improve data quality over time"],
   },
@@ -257,8 +262,8 @@ export const workItems: WorkItem[] = [
     objective:
       "Create a simple and accessible digital learning experience that allows learners to engage with educational content through a mobile device.",
     tags: ["Software Development", "UI/UX", "Learning Technology"],
-    relatedCapabilities: ["Software Development", "UI/UX and Product Design"],
-    relatedSolutions: ["Web Applications and Platforms", "Learning and Education Systems"],
+    relatedCapabilities: ["Engineering Excellence", "UI/UX and Product Design"],
+    relatedSolutions: ["Digital Products and Platforms", "Learning and Education Solutions"],
   },
   {
     slug: "website-design-development",
@@ -282,8 +287,8 @@ export const workItems: WorkItem[] = [
     objective:
       "Create professional websites that communicate the organisation's purpose clearly and work reliably across desktop, tablet and mobile devices.",
     tags: ["Web Development", "UI/UX", "Digital Experience"],
-    relatedCapabilities: ["Software Development", "UI/UX and Product Design"],
-    relatedSolutions: ["Web Applications and Platforms"],
+    relatedCapabilities: ["Engineering Excellence", "UI/UX and Product Design"],
+    relatedSolutions: ["Digital Products and Platforms"],
   },
   {
     slug: "digital-presence-website-improvement",
@@ -305,38 +310,35 @@ export const workItems: WorkItem[] = [
       "Ongoing website enhancements",
     ],
     tags: ["UI/UX", "Web Engineering", "Technology Consulting"],
-    relatedCapabilities: ["Software Development", "UI/UX and Product Design", "Technology Consulting"],
-    relatedSolutions: ["Web Applications and Platforms"],
+    relatedCapabilities: ["Engineering Excellence", "UI/UX and Product Design", "Technology Transformation and Advisory"],
+    relatedSolutions: ["Digital Products and Platforms"],
   },
 ];
 
 export const process = [
-  ["Understand", "Learn about the users, current process, goals and existing systems."],
-  ["Plan", "Agree what is most important, what can wait and how the work will be organised."],
-  ["Design", "Plan the solution, user experience and technical approach."],
-  ["Build", "Develop, connect and test the agreed solution."],
-  ["Launch", "Release the system and help users get started."],
-  ["Improve", "Fix issues and make useful changes over time."],
+  ["Understand", "Study the organisation, users, processes, objectives and current technology environment."],
+  ["Prioritise", "Identify the opportunities that can deliver the strongest value."],
+  ["Design", "Define the product, experience, architecture, implementation plan and expected outcomes."],
+  ["Build and Implement", "Develop, configure, integrate and deploy the agreed solution."],
+  ["Enable", "Train users, support adoption and establish governance."],
+  ["Improve", "Measure performance, resolve gaps and continuously enhance the solution."],
 ] as const;
 
 export const outcomes = [
-  "Software that works reliably",
-  "Systems people can use easily",
-  "Quicker updates and releases",
-  "Less manual work",
-  "Clearer operational information",
-  "Easier learning experiences",
-  "Clearer reports and decisions",
-  "Systems that can grow with the organisation",
+  "More reliable digital products",
+  "Better user adoption",
+  "Reduced manual effort",
+  "Better operational visibility",
+  "Faster delivery",
+  "Better-informed decisions",
+  "Technology that can scale",
 ] as const;
 
 export const whyCharitr = [
-  "We start with the business need",
-  "Designers and developers work together",
-  "Advice can include hands-on implementation",
-  "Systems are designed to be easy to use",
-  "AI is used where it is genuinely useful",
-  "Experience with businesses and social organisations",
-  "Flexible project and support options",
-  "Focus on software that can be maintained",
+  "Business needs before technology",
+  "Engineering and design working together",
+  "Strategy connected to implementation",
+  "Solutions designed for adoption",
+  "Responsible use of AI",
+  "Practical, long-term product thinking",
 ] as const;

@@ -19,7 +19,8 @@ export function CapabilityCard({ capability, index }: { capability: Capability; 
       </div>
       <p className="eyebrow">{capability.eyebrow}</p>
       <h3>{capability.title}</h3>
-      <p>{capability.statement}</p>
+      <p className="capability-card__statement">{capability.statement}</p>
+      <p className="capability-card__description">{capability.cardDescription}</p>
       <Link href={`/capabilities/${capability.slug}`}>View service <ArrowUpRight size={17} /></Link>
     </article>
   );
