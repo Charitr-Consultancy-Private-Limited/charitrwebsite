@@ -47,11 +47,8 @@ test("navigation supports an accessible active-page state", async () => {
 
 test("static export contains no website submission endpoint", async () => {
   const contactHtml = await render("/contact");
-  const careersHtml = await render("/careers");
   assert.doesNotMatch(contactHtml, /<form\b|\/api\/enquiry|Send enquiry/);
-  assert.doesNotMatch(careersHtml, /<form\b|\/api\/enquiry|Submit application/);
   assert.match(contactHtml, /does not collect or store enquiry details/);
-  assert.match(careersHtml, /does not upload, collect or store application details/);
 });
 
 test("work pages contain factual entries and no project placeholders", async () => {
@@ -83,13 +80,8 @@ test("non-project placeholders remain explicit and styled in red", async () => {
   assert.match(styles, /--placeholder-red: #b42318/);
 });
 
-test("careers publishes the current Chennai opening", async () => {
-  const careersHtml = await render("/careers");
+test("careers is not published", async () => {
   const homepage = await render();
-
-  assert.match(homepage, /Build technology that creates practical impact/);
-  assert.match(homepage, /href="[^"]*\/careers\/?"/);
-  assert.match(careersHtml, /Engineering Manager – Applications, Cloud &amp; AI/);
-  assert.match(careersHtml, /Full-time/);
-  assert.match(careersHtml, /Chennai/);
+  await assert.rejects(() => render("/careers"), { code: "ENOENT" });
+  assert.doesNotMatch(homepage, /href="[^"]*\/careers\/?"/);
 });
