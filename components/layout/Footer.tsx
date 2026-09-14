@@ -12,7 +12,7 @@ export function Footer() {
           <Link href="/" className="brand brand--inverse" aria-label="Charitr home">
             <BrandMark inverse />
           </Link>
-          <p>Technology consulting and digital product delivery for organisations creating business and social value.</p>
+          <p>Software development and digital solutions for organisations in India and internationally.</p>
           <div className="footer-contact">
             <a href={contact.phoneHref}><Phone size={17} />{contact.phone}</a>
             <a href={contact.emailHref}><Mail size={17} />{contact.email}</a>
@@ -24,7 +24,7 @@ export function Footer() {
           <ul>{navigation.slice(1).map((item) => <li key={item.href}><Link href={item.href}>{item.label}</Link></li>)}</ul>
         </div>
         <div>
-          <h2>Capabilities</h2>
+          <h2>Services</h2>
           <ul>{capabilities.map((item) => <li key={item.slug}><Link href={`/capabilities/${item.slug}`}>{item.title}</Link></li>)}</ul>
         </div>
         <div>

@@ -10,7 +10,7 @@ const inter = Inter({ variable: "--font-body", subsets: ["latin"], display: "swa
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: { default: siteName, template: "%s | Charitr" },
-  description: "Charitr designs, builds and transforms reliable digital products and technology-enabled operations.",
+  description: "Charitr provides software development, UI/UX design, AI automation and technology consulting.",
   applicationName: "Charitr",
   icons: {
     icon: assetPath("/favicon.png"),
@@ -43,7 +43,7 @@ const structuredData = [
     url: siteUrl,
     email: "info@charitr.in",
     telephone: "+91 99112 20198",
-    description: "Digital product engineering, UI/UX design, applied AI and technology transformation.",
+    description: "Software development, UI/UX design, AI automation and technology consulting.",
     areaServed: ["India", "International"],
   },
 ];

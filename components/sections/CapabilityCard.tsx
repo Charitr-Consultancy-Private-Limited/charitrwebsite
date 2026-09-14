@@ -20,8 +20,7 @@ export function CapabilityCard({ capability, index }: { capability: Capability; 
       <p className="eyebrow">{capability.eyebrow}</p>
       <h3>{capability.title}</h3>
       <p>{capability.statement}</p>
-      <Link href={`/capabilities/${capability.slug}`}>Explore capability <ArrowUpRight size={17} /></Link>
+      <Link href={`/capabilities/${capability.slug}`}>View service <ArrowUpRight size={17} /></Link>
     </article>
   );
 }
-

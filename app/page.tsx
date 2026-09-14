@@ -20,16 +20,16 @@ import { capabilities, caseStudies, outcomes, solutions, whyCharitr } from "@/da
 import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata(
-  "Digital Product, Engineering and Technology Transformation",
-  "Charitr designs, builds and transforms reliable digital products for SMEs, social enterprises, NGOs and education organisations.",
+  "Software Development and Digital Solutions",
+  "Charitr builds software and digital solutions for SMEs, social enterprises, NGOs and education organisations.",
   "/",
 );
 
 const customerSegments = [
-  { title: "SMEs", text: "Practical platforms and operational systems that support sustainable growth.", icon: Store },
-  { title: "Social enterprises", text: "Technology that balances commercial discipline with measurable social value.", icon: Lightbulb },
-  { title: "NGOs", text: "Usable programme platforms, reporting workflows and decision support.", icon: HeartHandshake },
-  { title: "Education organisations", text: "Learning experiences and systems designed for learners, educators and teams.", icon: GraduationCap },
+  { title: "SMEs", text: "Web applications and business systems that support growing teams.", icon: Store },
+  { title: "Social enterprises", text: "Digital tools for managing services, teams and social programmes.", icon: Lightbulb },
+  { title: "NGOs", text: "Programme systems, reporting tools and simpler workflows.", icon: HeartHandshake },
+  { title: "Education organisations", text: "Learning platforms and tools for learners, educators and administrators.", icon: GraduationCap },
 ];
 
 export default function Home() {
@@ -38,42 +38,42 @@ export default function Home() {
       <section className="home-hero">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Digital products · Engineering · Transformation</p>
-            <h1>We design, build and transform <span>digital products.</span></h1>
-            <p className="hero-lede">Charitr combines engineering excellence, user experience design and artificial intelligence to help SMEs, social enterprises, NGOs and education organisations build reliable platforms, improve operations and make better decisions.</p>
+            <p className="eyebrow">Software · Design · AI · Consulting</p>
+            <h1>We build software and <span>digital solutions.</span></h1>
+            <p className="hero-lede">Charitr helps organisations build websites, applications and digital systems. We also provide UI/UX design, AI automation and practical technology advice.</p>
             <div className="hero-actions">
-              <Link className="button" href="/contact">Discuss Your Requirement <ArrowRight size={18} /></Link>
-              <Link className="button button--secondary" href="/capabilities">Explore Our Capabilities</Link>
+              <Link className="button" href="/contact">Contact Us <ArrowRight size={18} /></Link>
+              <Link className="button button--secondary" href="/capabilities">View Our Services</Link>
             </div>
             <div className="hero-footnote">
-              <span><Check size={16} /> From strategy to implementation</span>
-              <span><Check size={16} /> India and international clients</span>
+              <span><Check size={16} /> Planning, design and development</span>
+              <span><Check size={16} /> Based in India</span>
             </div>
           </div>
-          <div className="system-visual" role="img" aria-label="A structured product system connecting user experience, engineering, data and artificial intelligence">
+          <div className="system-visual" role="img" aria-label="A digital solution connecting software, users, business needs and automation">
             <div className="system-visual__bar">
               <span /><span /><span />
-              <small>product.system / overview</small>
+              <small>software.project</small>
             </div>
             <div className="system-visual__canvas">
-              <div className="system-node system-node--core"><Network /><strong>Reliable product</strong><small>Built around the organisation</small></div>
-              <div className="system-node system-node--one"><Building2 /><span>Operations</span></div>
-              <div className="system-node system-node--two"><Sparkles /><span>Applied AI</span></div>
+              <div className="system-node system-node--core"><Network /><strong>Digital solution</strong><small>Built for users and teams</small></div>
+              <div className="system-node system-node--one"><Building2 /><span>Business needs</span></div>
+              <div className="system-node system-node--two"><Sparkles /><span>Automation</span></div>
               <div className="system-node system-node--three"><GraduationCap /><span>User experience</span></div>
-              <div className="system-node system-node--four"><Store /><span>Engineering</span></div>
+              <div className="system-node system-node--four"><Store /><span>Software</span></div>
               <span className="system-line system-line--one" />
               <span className="system-line system-line--two" />
               <span className="system-line system-line--three" />
               <span className="system-line system-line--four" />
             </div>
-            <div className="system-visual__footer"><span>Strategy</span><i /><span>Design</span><i /><span>Build</span><i /><span>Improve</span></div>
+            <div className="system-visual__footer"><span>Plan</span><i /><span>Design</span><i /><span>Build</span><i /><span>Support</span></div>
           </div>
         </div>
       </section>
 
       <section className="section section--white">
         <div className="container">
-          <SectionHeader eyebrow="Who we work with" title="Technology for organisations creating business and social value" description="We bring product, engineering and transformation thinking to organisations where technology needs to be useful, maintainable and adopted." />
+          <SectionHeader eyebrow="Who we work with" title="Digital support for different types of organisations" description="We work with organisations that need clear, usable and maintainable technology." />
           <div className="segment-grid">
             {customerSegments.map(({ title, text, icon: Icon }) => <article key={title}><Icon /><h3>{title}</h3><p>{text}</p></article>)}
           </div>
@@ -82,8 +82,8 @@ export default function Home() {
 
       <section className="section section--navy outcomes-section">
         <div className="container split-heading">
-          <SectionHeader eyebrow="Practical outcomes" title="What this means for your organisation" inverse />
-          <p>Every engagement begins with the change your organisation needs—not with a preferred tool or pre-packaged answer.</p>
+          <SectionHeader eyebrow="What we can improve" title="Common goals for our projects" inverse />
+          <p>We start by understanding what needs to work better, then choose the right approach and technology.</p>
         </div>
         <div className="container outcome-grid">
           {outcomes.map((outcome, index) => <div key={outcome}><span>{String(index + 1).padStart(2, "0")}</span><p>{outcome}</p></div>)}
@@ -92,7 +92,7 @@ export default function Home() {
 
       <section className="section" id="capabilities">
         <div className="container">
-          <SectionHeader eyebrow="Core capabilities" title="The disciplines needed to move from idea to dependable delivery" description="Specialists work together across product thinking, design, engineering, AI and implementation." />
+          <SectionHeader eyebrow="Our services" title="Design, development, automation and technology support" description="Our services can be used separately or combined for a complete project." />
           <div className="capability-grid">
             {capabilities.map((capability, index) => <CapabilityCard key={capability.slug} capability={capability} index={index} />)}
           </div>
@@ -102,8 +102,8 @@ export default function Home() {
       <section className="section section--blue-grey">
         <div className="container process-layout">
           <div className="process-sticky">
-            <SectionHeader eyebrow="How Charitr works" title="From problem to practical progress" description="A clear, collaborative path from understanding the context to building capability for continuous improvement." />
-            <Link className="text-link" href="/about">How we think and work <ArrowRight size={17} /></Link>
+            <SectionHeader eyebrow="How we work" title="A straightforward project process" description="We agree the problem, scope the work, build in stages and support the launch." />
+            <Link className="text-link" href="/about">About Charitr <ArrowRight size={17} /></Link>
           </div>
           <ProcessTimeline />
         </div>
@@ -112,9 +112,9 @@ export default function Home() {
       <section className="section section--white">
         <div className="container solutions-layout">
           <div>
-            <SectionHeader eyebrow="Solution areas" title="Connected capabilities, shaped around a real operational need" />
-            <p className="section-intro">These are repeatable solution areas—not pre-packaged products. Each is designed for the users, environment and outcomes involved.</p>
-            <Link className="button button--secondary" href="/solutions">Explore solutions</Link>
+            <SectionHeader eyebrow="Common solutions" title="Examples of systems we can help create" />
+            <p className="section-intro">Each project is scoped for the organisation, its users and its existing systems.</p>
+            <Link className="button button--secondary" href="/solutions">View solutions</Link>
           </div>
           <div className="solution-list">
             {solutions.map((solution, index) => (
@@ -128,8 +128,8 @@ export default function Home() {
 
       <section className="section work-section">
         <div className="container section-heading-row">
-          <SectionHeader eyebrow="Selected work" title="How product and technology work can create practical change" description="Case-study structures are ready for verified, client-approved content." />
-          <Link className="text-link" href="/work">View all work <ArrowRight size={17} /></Link>
+          <SectionHeader eyebrow="Example work" title="Project examples will be added here" description="These cards are placeholders for approved case studies." />
+          <Link className="text-link" href="/work">View work section <ArrowRight size={17} /></Link>
         </div>
         <div className="container case-grid">
           {caseStudies.map((study, index) => <CaseStudyCard key={study.slug} study={study} index={index} />)}
@@ -139,9 +139,9 @@ export default function Home() {
       <section className="section section--white">
         <div className="container why-layout">
           <div>
-            <p className="eyebrow">Why Charitr</p>
-            <h2>Technology decisions grounded in people, operations and long-term value.</h2>
-            <p>We bring the discipline of product engineering together with the context and care needed for adoption.</p>
+            <p className="eyebrow">Why work with us</p>
+            <h2>Practical support from planning through development.</h2>
+            <p>We keep the work clear, involve the right people and build systems that teams can use and maintain.</p>
           </div>
           <div className="why-grid">
             {whyCharitr.map((item, index) => <div key={item}><span>0{index + 1}</span><p>{item}</p></div>)}
@@ -151,7 +151,7 @@ export default function Home() {
 
       <section className="section presence-section">
         <div className="container">
-          <SectionHeader eyebrow="Our presence" title="Close enough to understand. Structured to collaborate." description="Charitr has its registered office in Delhi, with a delivery presence in Chennai and Kochi." />
+          <SectionHeader eyebrow="Where we work" title="Delhi · Chennai · Kochi" description="Charitr has its registered office in Delhi and a working presence in Chennai and Kochi." />
           <LocationBlock />
         </div>
       </section>

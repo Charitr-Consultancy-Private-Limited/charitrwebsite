@@ -26,7 +26,7 @@ export function createMetadata(
       title: fullTitle,
       description,
       url: canonical,
-      images: [{ url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Charitr — digital products built for practical progress" }],
+      images: [{ url: `${siteUrl}/og.png`, width: 1200, height: 630, alt: "Charitr software development and digital solutions" }],
     },
     twitter: {
       card: "summary_large_image",

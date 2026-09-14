@@ -26,30 +26,29 @@ export default async function CapabilityPage({ params }: { params: Promise<{ slu
 
   return (
     <>
-      <PageHero eyebrow={capability.eyebrow} title={capability.statement} description={capability.overview} crumbs={[{ label: "Capabilities", href: "/capabilities" }, { label: capability.title }]} />
+      <PageHero eyebrow={capability.eyebrow} title={capability.statement} description={capability.overview} crumbs={[{ label: "Services", href: "/capabilities" }, { label: capability.title }]} />
       <section className="section section--white">
         <div className="container capability-detail-grid">
-          <div><p className="eyebrow">Problems addressed</p><h2>Where this capability creates value</h2><ul className="check-list">{capability.problems.map((item) => <li key={item}><Check size={17} />{item}</li>)}</ul></div>
-          <div className="services-panel"><p className="eyebrow">Services delivered</p><h2>What we can deliver</h2><ul>{capability.services.map((item) => <li key={item}>{item}</li>)}</ul></div>
+          <div><p className="eyebrow">What we can help with</p><h2>Common problems</h2><ul className="check-list">{capability.problems.map((item) => <li key={item}><Check size={17} />{item}</li>)}</ul></div>
+          <div className="services-panel"><p className="eyebrow">Services</p><h2>What we provide</h2><ul>{capability.services.map((item) => <li key={item}>{item}</li>)}</ul></div>
         </div>
       </section>
       <section className="section">
         <div className="container customer-example-grid">
-          <div><Users size={28} /><p className="eyebrow">Intended customers</p><h2>Designed for organisations that need progress without unnecessary complexity.</h2><ul>{capability.customers.map((item) => <li key={item}>{item}</li>)}</ul></div>
-          <div className="example-panel"><span>Practical example</span><p>{capability.example}</p></div>
+          <div><Users size={28} /><p className="eyebrow">Who this is for</p><h2>Organisations that need practical technology support.</h2><ul>{capability.customers.map((item) => <li key={item}>{item}</li>)}</ul></div>
+          <div className="example-panel"><span>Example</span><p>{capability.example}</p></div>
         </div>
       </section>
       <section className="section section--navy">
-        <div className="container"><p className="eyebrow">Delivery approach</p><h2 className="inverse-heading">A structured path from context to capability.</h2><ol className="approach-steps">{capability.approach.map((item, index) => <li key={item}><span>0{index + 1}</span><p>{item}</p></li>)}</ol></div>
+        <div className="container"><p className="eyebrow">How we work</p><h2 className="inverse-heading">A clear process from review to delivery.</h2><ol className="approach-steps">{capability.approach.map((item, index) => <li key={item}><span>0{index + 1}</span><p>{item}</p></li>)}</ol></div>
       </section>
       <section className="section section--white">
         <div className="container related-grid">
-          <div><p className="eyebrow">Related solutions</p><h2>Put this capability to work</h2>{relatedSolutions.map((item) => <Link key={item.slug} href={`/solutions#${item.slug}`}>{item.title}<ArrowRight size={17} /></Link>)}</div>
-          <div><p className="eyebrow">Related work</p><h2>Case-study structures</h2>{relatedWork.length ? relatedWork.map((item) => <Link key={item.slug} href={`/work/${item.slug}`}>{item.title}<span>Placeholder</span></Link>) : <p>Verified related work will be added after approval.</p>}</div>
+          <div><p className="eyebrow">Related solutions</p><h2>Where this service can be used</h2>{relatedSolutions.map((item) => <Link key={item.slug} href={`/solutions#${item.slug}`}>{item.title}<ArrowRight size={17} /></Link>)}</div>
+          <div><p className="eyebrow">Related work</p><h2>Project examples</h2>{relatedWork.length ? relatedWork.map((item) => <Link className="placeholder-link" key={item.slug} href={`/work/${item.slug}`}>{item.title}<span className="placeholder-badge">PLACEHOLDER</span></Link>) : <p className="placeholder-note"><strong>PLACEHOLDER</strong> · Approved project examples will be added here.</p>}</div>
         </div>
       </section>
-      <CTASection title={`Need support with ${capability.title.toLowerCase()}?`} />
+      <CTASection title={`Need help with ${capability.title.toLowerCase()}?`} />
     </>
   );
 }
-

@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const study = caseStudies.find((item) => item.slug === slug);
   if (!study) return {};
-  return createMetadata(`${study.title} — Case Study Placeholder`, "A clearly marked case-study content structure awaiting verified client-approved information.", `/work/${study.slug}`);
+  return createMetadata(`${study.title} — Placeholder`, "This is a placeholder page for a future approved project example.", `/work/${study.slug}`);
 }
 
 export default async function CaseStudyPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -22,13 +22,12 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
   if (!study) notFound();
   return (
     <>
-      <PageHero eyebrow="Case study · Content placeholder" title={study.title} description="This page demonstrates the approved case-study structure. It does not claim a client identity, result or testimonial." crumbs={[{ label: "Work", href: "/work" }, { label: study.title }]} />
+      <PageHero placeholder eyebrow="PLACEHOLDER · Project example" title={study.title} description="This sample page does not identify a client or claim a project result or testimonial." crumbs={[{ label: "Work", href: "/work" }, { label: study.title }]} />
       <section className="section section--white">
-        <div className="container placeholder-callout"><strong>Not a published client claim</strong><p>Every statement on this page must be replaced or verified before this entry is treated as live commercial evidence.</p></div>
+        <div className="container placeholder-callout"><strong>PLACEHOLDER</strong><p>All information on this page must be replaced or approved before it is presented as a real project.</p></div>
         <div className="container"><CaseStudyDetail study={study} /></div>
       </section>
       <CTASection />
     </>
   );
 }
-

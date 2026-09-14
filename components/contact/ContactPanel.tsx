@@ -7,8 +7,8 @@ export function ContactPanel() {
       <p className="eyebrow">Direct contact</p>
       <h2 id="direct-contact-title">Email or call Charitr</h2>
       <p>
-        Share the challenge, desired outcome and preferred timeframe. We will
-        review it and respond with a practical next step.
+        Share a short description of the work and your preferred timeframe. We
+        will review it and reply by email or phone.
       </p>
       <div className="direct-contact-actions">
         <a className="button" href={contact.emailHref}>
@@ -19,7 +19,8 @@ export function ContactPanel() {
         </a>
       </div>
       <p className="direct-contact-note">
-        This website does not collect, store or transmit enquiry details.
+        This website does not collect or store enquiry details. The buttons above
+        open your email or phone application.
       </p>
     </aside>
   );

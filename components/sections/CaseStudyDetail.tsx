@@ -9,7 +9,7 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
   ];
 
   return (
-    <div className="case-detail">
+    <div className={study.placeholder ? "case-detail case-detail--placeholder" : "case-detail"}>
       <div className="case-detail__main">
         {sections.map(([title, text]) => <section key={title}><h2>{title}</h2><p>{text}</p></section>)}
         <section><h2>Testimonial</h2><p>{study.testimonial}</p></section>
@@ -17,11 +17,10 @@ export function CaseStudyDetail({ study }: { study: CaseStudy }) {
       <aside>
         <div><h2>Client type</h2><p>{study.clientType}</p></div>
         <div><h2>Sector</h2><p>{study.sector}</p></div>
-        <div><h2>Capabilities</h2><ul>{study.capabilities.map((item) => <li key={item}>{item}</li>)}</ul></div>
+        <div><h2>Services</h2><ul>{study.capabilities.map((item) => <li key={item}>{item}</li>)}</ul></div>
         <div><h2>Technologies</h2><ul>{study.technologies.map((item) => <li key={item}>{item}</li>)}</ul></div>
         <div><h2>Related solutions</h2><ul>{study.relatedSolutions.map((item) => <li key={item}>{item}</li>)}</ul></div>
       </aside>
     </div>
   );
 }
-

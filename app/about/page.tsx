@@ -12,40 +12,40 @@ export const metadata = createMetadata(
 );
 
 const principles = [
-  ["Purpose before tools", "We begin with the organisation, its users and the change required.", Compass],
-  ["Build for endurance", "Architecture, design and delivery decisions should make the product easier to sustain.", Shapes],
-  ["Work in the open", "Clear decisions, visible progress and honest trade-offs create better outcomes.", Handshake],
-  ["Use technology responsibly", "Security, accessibility, privacy and human oversight are design requirements.", Scale],
+  ["Understand the need first", "We learn about the organisation, its users and the work that needs to improve.", Compass],
+  ["Keep software maintainable", "We make design and technical choices that are suitable for long-term use.", Shapes],
+  ["Communicate clearly", "We share decisions, progress, questions and trade-offs throughout the project.", Handshake],
+  ["Use technology responsibly", "We consider security, accessibility, privacy and human oversight.", Scale],
 ];
 
 export default function AboutPage() {
   return (
     <>
-      <PageHero eyebrow="About Charitr" title="Technology work shaped by purpose, context and long-term value." description="Charitr Consultancy Private Limited is a technology consulting and digital product company helping organisations design, build and improve technology-enabled products and operations." crumbs={[{ label: "About" }]} />
+      <PageHero eyebrow="About Charitr" title="A software and digital solutions company." description="Charitr Consultancy Private Limited helps organisations plan, design, build and improve websites, applications and business systems." crumbs={[{ label: "About" }]} />
       <section className="section section--white">
         <div className="container editorial-split">
-          <div><p className="eyebrow">Who we are</p><h2>A practical partner from first decision to continuous improvement.</h2></div>
+          <div><p className="eyebrow">Who we are</p><h2>Technology support for organisations of different sizes.</h2></div>
           <div className="prose-large">
             <p>Charitr works with SMEs, social enterprises, NGOs and education organisations in India and internationally.</p>
-            <p>We connect product strategy, user experience, engineering, applied AI and transformation delivery so that technology decisions translate into usable, maintainable systems.</p>
+            <p>Our work includes software development, UI/UX design, AI automation and technology consulting. We can support a complete project or help with a specific part of it.</p>
           </div>
         </div>
       </section>
       <section className="section">
         <div className="container mission-grid">
-          <article><p className="eyebrow">Mission</p><h2>Help organisations create dependable digital products and technology-enabled operations that deliver practical value.</h2></article>
-          <article><p className="eyebrow">Vision</p><h2>Technology that strengthens organisations, serves people well and improves with purpose.</h2></article>
+          <article><p className="eyebrow">Mission</p><h2>Help organisations use software and digital tools to work better and serve their users.</h2></article>
+          <article><p className="eyebrow">Vision</p><h2>Useful technology that is clear, dependable and easy to maintain.</h2></article>
         </div>
       </section>
       <section className="section section--navy name-section">
         <div className="container">
           <p className="name-word">charitr</p>
-          <div><p className="eyebrow">The meaning of our name</p><h2>Character expressed through responsible transformation.</h2><p>Charitr draws from the Sanskrit concept of character, reflecting the company’s commitment to responsible, purposeful and enduring transformation. The name guides how we work; the technology proposition remains at the centre of what we do.</p></div>
+          <div><p className="eyebrow">The meaning of our name</p><h2>A name connected to character and responsible work.</h2><p>Charitr draws from the Sanskrit concept of character. It reflects our aim to work responsibly, communicate honestly and build technology that is useful over time.</p></div>
         </div>
       </section>
       <section className="section section--white">
         <div className="container">
-          <SectionHeader eyebrow="Operating principles" title="A clear standard for how we approach the work" />
+          <SectionHeader eyebrow="How we work" title="Simple principles for every project" />
           <div className="principle-grid">
             {principles.map(([title, text, Icon]) => <article key={String(title)}><Icon /><h3>{String(title)}</h3><p>{String(text)}</p></article>)}
           </div>
@@ -53,15 +53,14 @@ export default function AboutPage() {
       </section>
       <section className="section section--blue-grey">
         <div className="container leadership-layout">
-          <div><SectionHeader eyebrow="Leadership" title="Leadership profiles will be added after verification" description="Names, roles, biographies and portraits are intentionally not invented. This section is ready for approved information." /></div>
-          <div className="leadership-placeholder"><span>Verified leadership content required</span><div /><div /></div>
+          <div><SectionHeader eyebrow="Leadership" title="Leadership details will be added here" description="Names, roles, biographies and photographs will be added after they are approved." /></div>
+          <div className="leadership-placeholder"><span>PLACEHOLDER · Leadership profiles</span><div /><div /></div>
         </div>
       </section>
       <section className="section section--white">
         <div className="container"><SectionHeader eyebrow="Our presence" title="Delhi · Chennai · Kochi" description="Registered in Delhi, with a working presence in Chennai and Kochi." /><LocationBlock /></div>
       </section>
-      <CTASection title="Looking for a technology partner who can connect decisions to delivery?" />
+      <CTASection title="Need help with a software or digital project?" />
     </>
   );
 }
-

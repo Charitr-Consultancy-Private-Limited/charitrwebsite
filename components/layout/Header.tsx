@@ -67,7 +67,7 @@ export function Header() {
         </nav>
 
         <Link className="button button--small header-cta" href="/contact">
-          Discuss Your Requirement
+          Contact Us
         </Link>
 
         <button
@@ -94,7 +94,7 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          <Link className="button" href="/contact" onClick={() => setOpen(false)}>Discuss Your Requirement</Link>
+          <Link className="button" href="/contact" onClick={() => setOpen(false)}>Contact Us</Link>
         </nav>
       </div>
     </header>

@@ -11,14 +11,13 @@ export function LegalPage({
 }) {
   return (
     <>
-      <PageHero eyebrow="Legal" title={title} description={description} crumbs={[{ label: title }]} />
+      <PageHero placeholder eyebrow="PLACEHOLDER · Legal" title={title} description={description} crumbs={[{ label: title }]} />
       <section className="section section--white">
         <article className="container legal-copy">
-          <div className="legal-review">Draft placeholder — requires review by qualified legal counsel before public launch.</div>
+          <div className="legal-review"><strong>PLACEHOLDER · Legal draft</strong><span>This page requires review by qualified legal counsel before public use.</span></div>
           {children}
         </article>
       </section>
     </>
   );
 }
-

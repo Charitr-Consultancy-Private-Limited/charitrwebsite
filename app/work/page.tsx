@@ -6,22 +6,21 @@ import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata(
   "Work and Case Studies",
-  "Explore the structure prepared for Charitr’s verified digital product, design, engineering, AI and transformation work.",
+  "Project examples will be published here after the details are approved.",
   "/work",
 );
 
 export default function WorkPage() {
   return (
     <>
-      <PageHero eyebrow="Work" title="Practical technology work, presented with evidence." description="This section is structured for client-approved case studies. Names, results, testimonials and statistics are intentionally withheld until verified." crumbs={[{ label: "Work" }]} />
+      <PageHero placeholder eyebrow="PLACEHOLDER · Work" title="Project examples will be added here." description="Client names, results, testimonials and statistics will only be published after they are checked and approved." crumbs={[{ label: "Work" }]} />
       <section className="section">
-        <div className="container placeholder-callout"><strong>Editorial status</strong><p>All entries below are clearly marked content placeholders. Replace them with verified project narratives, approved visual assets and evidence before launch.</p></div>
+        <div className="container placeholder-callout"><strong>PLACEHOLDER</strong><p>The entries below are sample layouts. They must be replaced with approved project information and images.</p></div>
         <div className="container case-grid case-grid--listing">
           {caseStudies.map((study, index) => <CaseStudyCard key={study.slug} study={study} index={index} />)}
         </div>
       </section>
-      <CTASection title="Have a project challenge you would like us to understand?" />
+      <CTASection title="Would you like to discuss a project?" />
     </>
   );
 }
-
