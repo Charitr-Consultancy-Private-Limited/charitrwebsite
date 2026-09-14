@@ -42,9 +42,12 @@ test("navigation supports an accessible active-page state", async () => {
 
 test("static export contains no website submission endpoint", async () => {
   const contactHtml = await render("/contact");
-  const careersHtml = await render("/careers");
   assert.doesNotMatch(contactHtml, /<form\b|\/api\/enquiry|Send enquiry/);
-  assert.doesNotMatch(careersHtml, /<form\b|\/api\/enquiry|Submit application/);
   assert.match(contactHtml, /does not collect, store or transmit enquiry details/);
-  assert.match(careersHtml, /does not upload, collect or store application details/);
+});
+
+test("careers is not published", async () => {
+  await assert.rejects(() => render("/careers"), { code: "ENOENT" });
+  const homepage = await render();
+  assert.doesNotMatch(homepage, /href="[^"]*\/careers\/?"/);
 });

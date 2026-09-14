@@ -4,12 +4,11 @@ Production-oriented static corporate website for Charitr Consultancy Private Lim
 
 ## Website architecture
 
-- Home: positioning, audiences, outcomes, capabilities, process, solutions, work, differentiators, locations and careers.
+- Home: positioning, audiences, outcomes, capabilities, process, solutions, work, differentiators and locations.
 - About: overview, mission, vision, name meaning, principles, leadership placeholder and locations.
 - Capabilities: listing plus reusable detail pages for Engineering, UI/UX, AI and Technology Transformation.
 - Solutions: four repeatable solution areas with problems, users, functionality, capabilities and implementation approach.
 - Work: case-study listing and reusable detail template.
-- Careers: Engineering Manager – Applications, Cloud & AI job description, values, process and direct application email link.
 - Contact: direct email and telephone contact information.
 - Legal: Privacy Policy, Cookie Policy and Terms of Use draft placeholders.
 - Platform: custom 404, sitemap, robots, structured data and page-specific metadata.
@@ -67,7 +66,7 @@ preview at `https://anupnathaniel.github.io/charitrwebsite/`.
 - Replace all `CONTENT PLACEHOLDER` case studies with verified, client-approved information.
 - Add approved client names, outcomes, technologies, testimonials and project visuals only when permission is documented.
 - Add verified leadership names, roles, biographies and portraits.
-- Obtain legal review of the Privacy Policy, Cookie Policy, Terms of Use and recruitment/privacy wording.
+- Obtain legal review of the Privacy Policy, Cookie Policy and Terms of Use.
 - Confirm the registered-office postal address if it should be published.
 - Add a final approved logo asset if Charitr has an existing brand master.
 - Configure privacy-respecting analytics only if required.

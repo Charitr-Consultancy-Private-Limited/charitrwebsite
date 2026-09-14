@@ -11,7 +11,6 @@ import {
   Store,
 } from "lucide-react";
 import { CapabilityCard } from "@/components/sections/CapabilityCard";
-import { CareerBlock } from "@/components/sections/CareerBlock";
 import { CaseStudyCard } from "@/components/sections/CaseStudyCard";
 import { CTASection } from "@/components/sections/CTASection";
 import { LocationBlock } from "@/components/sections/LocationBlock";
@@ -151,12 +150,9 @@ export default function Home() {
       </section>
 
       <section className="section presence-section">
-        <div className="container presence-grid">
-          <div>
-            <SectionHeader eyebrow="Our presence" title="Close enough to understand. Structured to collaborate." description="Charitr has its registered office in Delhi, with a delivery presence in Chennai and Kochi." />
-            <LocationBlock />
-          </div>
-          <CareerBlock />
+        <div className="container">
+          <SectionHeader eyebrow="Our presence" title="Close enough to understand. Structured to collaborate." description="Charitr has its registered office in Delhi, with a delivery presence in Chennai and Kochi." />
+          <LocationBlock />
         </div>
       </section>
 
@@ -164,4 +160,3 @@ export default function Home() {
     </>
   );
 }
-
