@@ -19,6 +19,8 @@ test("static export contains the finished Charitr homepage", async () => {
   assert.match(html, /From problem to practical progress/);
   assert.match(html, /charitr-logo\.webp/);
   assert.match(html, /favicon\.png/);
+  assert.match(html, /https:\/\/charitr\.in/);
+  assert.doesNotMatch(html, /\/charitrwebsite\//);
   assert.doesNotMatch(html, /charitr-logo\.png|favicon\.ico/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape|react-loading-skeleton/);
 });
@@ -84,4 +86,14 @@ test("careers is not published", async () => {
   const homepage = await render();
   await assert.rejects(() => render("/careers"), { code: "ENOENT" });
   assert.doesNotMatch(homepage, /href="[^"]*\/careers\/?"/);
+});
+
+test("GitHub Pages publishes the custom domain from the root", async () => {
+  const cname = await readFile(new URL("../public/CNAME", import.meta.url), "utf8");
+  const homepage = await render();
+
+  assert.equal(cname.trim(), "charitr.in");
+  assert.match(homepage, /href="\/about\/"/);
+  assert.match(homepage, /src="\/charitr-logo\.webp"/);
+  assert.doesNotMatch(homepage, /NEXT_PUBLIC_BASE_PATH|\/charitrwebsite\//);
 });

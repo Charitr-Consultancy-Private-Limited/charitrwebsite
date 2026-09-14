@@ -52,14 +52,14 @@ to `out/`:
 pnpm build
 ```
 
-The GitHub Pages build uses the repository subpath:
+The GitHub Pages build targets the custom domain root:
 
 ```bash
 pnpm build:pages
 ```
 
 Pushing to `main` triggers `.github/workflows/pages.yml`, which publishes the
-preview at `https://charitr-consultancy-private-limited.github.io/charitrwebsite/`.
+site at `https://charitr.in/`.
 
 ## Launch checklist / TODO
 
