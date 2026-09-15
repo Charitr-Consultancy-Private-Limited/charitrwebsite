@@ -13,9 +13,13 @@ export function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   const isActive = (href: string) => {
-    const normalizedPath = pathname.length > 1
-      ? pathname.replace(/\/+$/, "")
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+    const currentPath = basePath && pathname.startsWith(basePath)
+      ? pathname.slice(basePath.length) || "/"
       : pathname;
+    const normalizedPath = currentPath.length > 1
+      ? currentPath.replace(/\/+$/, "")
+      : currentPath;
 
     return href === "/"
       ? normalizedPath === "/"

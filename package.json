@@ -8,7 +8,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:pages": "NEXT_PUBLIC_SITE_URL=https://charitr.in next build",
+    "build:pages": "NEXT_PUBLIC_BASE_PATH=/charitrwebsite NEXT_PUBLIC_SITE_URL=https://charitr-consultancy-private-limited.github.io/charitrwebsite next build",
+    "build:domain": "NEXT_PUBLIC_SITE_URL=https://charitr.in next build",
     "test": "pnpm run build && node --test tests/rendered-html.test.mjs",
     "lint": "eslint . --ignore-pattern .next --ignore-pattern out"
   },
