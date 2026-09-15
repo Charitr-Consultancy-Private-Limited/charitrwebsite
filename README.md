@@ -52,20 +52,14 @@ to `out/`:
 pnpm build
 ```
 
-The GitHub Pages build currently targets the official repository preview path:
+The GitHub Pages build targets the custom domain root:
 
 ```bash
 pnpm build:pages
 ```
 
 Pushing to `main` triggers `.github/workflows/pages.yml`, which publishes the
-site at `https://charitr-consultancy-private-limited.github.io/charitrwebsite/`.
-
-The custom-domain build is ready for the later DNS cutover:
-
-```bash
-pnpm build:domain
-```
+site at `https://charitr.in/`.
 
 ## Launch checklist / TODO
 
